@@ -1,0 +1,227 @@
+# 🏗️ GymIQ — خطة تطبيق RAG على بيانات التمارين
+
+## الهدف
+بناء نظام RAG احترافي لميزة الـ **Exercise Q&A بالعربي** (Feature 3) باستخدام بيانات التمارين (185 تمرين) مع **موديلات مجانية 100%**.
+
+---
+
+## 1. البيانات الإضافية المقترحة
+
+### ✅ موجود حالياً (exercises_v7.jsonl — 185 تمرين)
+- اسم التمرين (EN + AR) + وصف + عضلات + معدات + إصابات + مستوى + `rag_text`
+
+### 🔜 بيانات إضافية مقترحة لتحسين الـ RAG
+
+| الملف | المحتوى | عدد الـ chunks | الغرض |
+|---|---|---|---|
+| `workout_programs.jsonl` | برامج تدريبية جاهزة (PPL, Upper/Lower, Full Body, Bro Split) | ~15-20 | لما المستخدم يسأل "ايه أحسن برنامج؟" |
+| `exercise_tips.jsonl` | نصائح شائعة (إحماء، تبريد، تنفس، progressive overload) | ~30-40 | أسئلة عامة عن التدريب |
+| `injury_guide.jsonl` | إرشادات الإصابات (ايه التمارين الآمنة لكل إصابة) | ~15-20 | "عندي مشكلة في الكتف، أتمرن ايه؟" |
+| `muscle_anatomy.jsonl` | شرح كل عضلة ووظيفتها | ~20-25 | "ايه الفرق بين الترايسبس والبايسبس؟" |
+
+> [!TIP]
+> كل الملفات دي **اختيارية** — الـ RAG هيشتغل بـ `exercises_v7.jsonl` لوحده كويس جداً. الملفات الإضافية بتحسن جودة الردود بس.
+
+---
+
+## 2. الموديلات المجانية المُقترحة
+
+### 🧠 Embedding Model (لتحويل النص لـ Vector)
+
+| الموديل | المزود | الأبعاد | اللغات | Free Tier | التوصية |
+|---|---|---|---|---|---|
+| **`embed-multilingual-v3.0`** | Cohere | 1024 | 100+ لغة | 1000 call/شهر | ⭐ **الأفضل** |
+| `embed-multilingual-light-v3.0` | Cohere | 384 | 100+ لغة | 1000 call/شهر | بديل أخف |
+
+> [!IMPORTANT]
+> **Cohere `embed-multilingual-v3.0` هو الاختيار الوحيد الصحيح** لأنه:
+> 1. بيفهم **عربي + إنكليزي** في نفس الـ vector space
+> 2. المستخدم يسأل بالعربي والداتا فيها إنكليزي + عربي = النتائج دقيقة
+> 3. **مجاني** (1000 call/شهر كافية جداً — 185 تمرين = call واحد)
+
+### 💬 LLM Model (لتوليد الرد النهائي بالعربي)
+
+| الموديل | المزود | السرعة | العربي | Free Tier | التوصية |
+|---|---|---|---|---|---|
+| **`llama-3.3-70b-versatile`** | Groq | ⚡ سريع جداً | جيد جداً | ✅ | ⭐ **الأفضل للسرعة** |
+| `gemma-2-9b-it` | Groq | ⚡ سريع | متوسط | ✅ | بديل خفيف |
+| **`deepseek-r1-distill-llama-70b`** | Groq | ⚡ سريع | جيد | ✅ | ⭐ **الأفضل للدقة** |
+| `llama-3.3-70b-instruct` | OpenRouter | متوسط | جيد جداً | ✅ | بديل |
+| `gemini-2.0-flash` | OpenRouter | سريع | ممتاز | ✅ | بديل ممتاز للعربي |
+| `command-r` | Cohere | متوسط | ممتاز | ✅ (limited) | أفضل عربي |
+
+### ✅ التوصية النهائية (Free Stack)
+
+```
+┌─────────────────────────────────────────┐
+│  Embedding:  Cohere embed-multilingual  │ ← مجاني
+│  LLM:        Groq llama-3.3-70b        │ ← مجاني + سريع
+│  Database:   Supabase pgvector          │ ← مجاني (Free Tier)
+│  Fallback:   OpenRouter gemini-2.0-flash│ ← لو Groq وقع
+└─────────────────────────────────────────┘
+```
+
+---
+
+## 3. استراتيجية الـ Chunking
+
+### لماذا لا نحتاج Text Splitter؟
+
+في حالتنا **كل تمرين = chunk واحد طبيعي** لأن:
+- حجم الـ `rag_text` لكل تمرين = **200-400 token** ← الحجم المثالي
+- الحد الأقصى لـ Cohere Embed = **512 token** ← كل chunk يدخل بالكامل
+- كل chunk يحتوي **معلومة كاملة ومستقلة**
+
+### الـ Chunk = `rag_text` (جاهز في الملف)
+
+```
+Exercise: Barbell Bench Press (ضغط بنش بالبار)
+Type: Compound. Level: Intermediate. Equipment: Barbell, Bench.
+Targets: Pectoralis Major, Pectoralis Minor.
+Secondary: Anterior Deltoid, Triceps.
+Description: Lie flat on a bench...
+Notes: Do not bounce bar off chest.
+Safe for: Lower Back, Knee.
+Avoid if: Shoulder Impingement, Rotator Cuff Tear.
+```
+
+### ⚙️ تقنية الـ Chunking المختارة: **Single-Entity Chunking**
+
+| التقنية | الوصف | مناسبة لحالتنا؟ |
+|---|---|---|
+| Fixed-Size Chunking | تقطيع كل 500 حرف | ❌ ممكن يقطع تمرين |
+| Recursive Text Splitting | تقطيع ذكي حسب الفقرات | ❌ مش محتاجينه |
+| Semantic Chunking | تقطيع حسب المعنى | ❌ مش محتاجينه |
+| **Single-Entity Chunking** | كل كائن = chunk | ✅ **الأفضل** |
+
+---
+
+## 4. استراتيجية الـ Embedding
+
+### الخطوات بالتفصيل
+
+```
+Step 1: Read exercises_v7.jsonl (185 exercise)
+   ↓
+Step 2: Extract rag_text from each exercise
+   ↓
+Step 3: Call Cohere embed-multilingual-v3.0
+         - input_type = "search_document"
+         - batch size = 96 (max allowed)
+         - 185 exercises = 2 API calls only!
+   ↓
+Step 4: Store in Supabase pgvector table
+         - content = rag_text
+         - embedding = vector(1024)
+         - metadata = {exercise_id, level, equipment, injury_safe, ...}
+```
+
+### جدول pgvector في Supabase
+
+```sql
+CREATE TABLE exercise_embeddings (
+  id BIGSERIAL PRIMARY KEY,
+  exercise_id TEXT UNIQUE NOT NULL,
+  content TEXT NOT NULL,              -- rag_text
+  name_ar TEXT,
+  metadata JSONB NOT NULL DEFAULT '{}',
+  embedding VECTOR(1024) NOT NULL     -- Cohere output
+);
+
+-- Index for fast similarity search
+CREATE INDEX ON exercise_embeddings
+  USING ivfflat (embedding vector_cosine_ops)
+  WITH (lists = 20);
+```
+
+### الـ Metadata المخزنة (للـ Hybrid Search)
+
+```json
+{
+  "level": "Intermediate",
+  "equipment": ["Barbell", "Bench"],
+  "exercise_type": "Compound",
+  "target_muscle": ["Pectoralis Major"],
+  "injury_safe": ["Lower Back", "Knee"],
+  "contraindications": ["Shoulder Impingement"],
+  "tags": ["strength", "chest", "compound"],
+  "difficulty_score": 6
+}
+```
+
+---
+
+## 5. استراتيجية البحث (Query Pipeline)
+
+### Hybrid Search = Vector + Metadata Filter
+
+```
+User Query: "تمرين صدر للمبتدئين بدون بار"
+                    ↓
+┌─── Step 1: Embed the query ──────────────────┐
+│  Cohere embed-multilingual-v3.0              │
+│  input_type = "search_query"                 │
+│  → query_vector (1024 dims)                  │
+└──────────────────────────────────────────────┘
+                    ↓
+┌─── Step 2: Hybrid Search in pgvector ────────┐
+│  WHERE metadata->>'level' = 'Beginner'       │  ← SQL filter
+│  AND NOT metadata->'equipment' ? 'Barbell'   │  ← SQL filter
+│  ORDER BY embedding <=> query_vector         │  ← Vector search
+│  LIMIT 5                                     │
+└──────────────────────────────────────────────┘
+                    ↓
+┌─── Step 3: Build LLM Prompt ─────────────────┐
+│  System: "أنت مدرب رياضي خبير..."            │
+│  Context: [top 5 exercises rag_text]          │
+│  User: "تمرين صدر للمبتدئين بدون بار"        │
+└──────────────────────────────────────────────┘
+                    ↓
+┌─── Step 4: Generate Arabic Answer ───────────┐
+│  Groq llama-3.3-70b-versatile                │
+│  → رد بالعربي مبني على البيانات الحقيقية     │
+└──────────────────────────────────────────────┘
+```
+
+### الـ System Prompt المقترح للـ LLM
+
+```
+أنت مدرب لياقة بدنية خبير اسمك GymIQ.
+أجب على أسئلة التمارين بالعربي فقط.
+استخدم المعلومات المقدمة لك في الـ Context فقط — لا تخترع معلومات.
+إذا لم تجد إجابة في الـ Context، قل "مش لاقي معلومات عن ده".
+اذكر اسم التمرين بالعربي والإنكليزي.
+قدم نصائح عملية وسلامة دائماً.
+```
+
+---
+
+## 6. خطوات التنفيذ (الترتيب)
+
+| الخطوة | المهمة | الأداة | ملاحظات |
+|---|---|---|---|
+| 1 | إنشاء جدول `exercise_embeddings` في Supabase | Supabase Dashboard | تفعيل pgvector extension أولاً |
+| 2 | كتابة سكريبت `embed_exercises.py` | FastAPI endpoint | يقرأ JSONL → يرسل لـ Cohere → يخزن في pgvector |
+| 3 | إنشاء endpoint `POST /qa/embed-knowledge` | FastAPI | يشغل السكريبت (مرة واحدة) |
+| 4 | إنشاء endpoint `POST /qa/ask` | FastAPI | الـ pipeline الكامل (embed query → search → LLM → respond) |
+| 5 | إنشاء endpoint `GET /qa/logs/{member_id}` | FastAPI | تسجيل الأسئلة والردود |
+| 6 | اختبار عبر Swagger UI | Browser | تجربة أسئلة بالعربي |
+
+---
+
+## 7. خطة التحقق (Verification)
+
+### اختبار تلقائي
+- تشغيل السكريبت على الـ 185 تمرين والتأكد من تخزين 185 vector في pgvector
+- التأكد من أن كل vector = 1024 بُعد
+
+### اختبار يدوي عبر Swagger UI
+1. `POST /qa/embed-knowledge` → يرجع `{"status": "185 exercises embedded"}`
+2. `POST /qa/ask` بسؤال `"ايه أحسن تمرين صدر للمبتدئين؟"` → يرجع رد بالعربي يذكر Push-Up و Dumbbell Press
+3. `POST /qa/ask` بسؤال `"عندي مشكلة في الكتف، أتمرن إيه؟"` → يرجع تمارين فيها `injury_safe: Shoulder`
+4. `POST /qa/ask` بسؤال `"ايه الفرق بين الكومباوند والأيزوليشن؟"` → يرجع شرح مبني على البيانات
+
+---
+
+> [!NOTE]
+> الخطة دي مش محتاجة أي تكلفة مالية. كل الموديلات والأدوات المستخدمة **مجانية 100%**.

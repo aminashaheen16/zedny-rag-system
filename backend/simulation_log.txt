@@ -1,0 +1,23 @@
+Starting Simulation with Session ID: test_sim_1768675721
+------------------------------------------------------------
+
+[USER]: الموقع مش شغال
+[AI]: عشان أساعدك بشكل أفضل، ممكن تقولي:
+🖥️ نوع الجهاز (كمبيوتر/لابتوب/موبايل)
+🌐 البراوزر اللي بتستخدمه (كروم/سفاري/فايرفوكس)
+[DEBUG State]: Status=DOWN, Intent=0, Device={'device_type': None, 'browser': None, 'os': None, 'is_collected': False}
+------------------------------------------------------------
+
+[USER]: laptop chrome
+[AI]: To help you better, could you tell me:
+🖥️ Your device type (Desktop/Laptop/Mobile)
+🌐 Your browser (Chrome/Safari/Firefox)
+[DEBUG State]: Status=query, Intent=0, Device={'device_type': None, 'browser': None, 'os': None, 'is_collected': False}
+------------------------------------------------------------
+
+[USER]: الموقع بيعلق مهنج
+[AI]: عشان أساعدك بشكل أفضل، ممكن تقولي:
+🖥️ نوع الجهاز (كمبيوتر/لابتوب/موبايل)
+🌐 البراوزر اللي بتستخدمه (كروم/سفاري/فايرفوكس)
+[DEBUG State]: Status=ERROR, Intent=0, Device={'device_type': None, 'browser': None, 'os': None, 'is_collected': False}
+------------------------------------------------------------

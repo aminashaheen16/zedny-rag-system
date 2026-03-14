@@ -1,0 +1,383 @@
+{
+  "project": "ZEDNY Technical Troubleshooting Knowledge Base",
+  "version": "1.0",
+  "created_date": "2026-02-04",
+  "total_chunks": 20,
+  "description": "Technical support knowledge base for ZEDNY RAG system - covering video streaming, access, progress tracking, certificates, and admin dashboard issues",
+  "languages": [
+    "ar",
+    "en"
+  ],
+  "content_types": [
+    "technical_solution",
+    "troubleshooting"
+  ],
+  "categories": [
+    "Video Streaming Issues",
+    "Access & Login Issues",
+    "Progress & Completion",
+    "Certificates",
+    "Admin/HR Dashboard"
+  ],
+  "chunks": [
+    {
+      "chunk_id": "File_15_Tech_Support_01_AR",
+      "title": "الفيديو بيعمل Buffering مستمر",
+      "content": "**المشكلة:** الفيديو التدريبي بيقف كل شوية وبيعمل buffering طول الوقت حتى لو النت سريع.\n\n**التشخيص الفني:**\n- الـ Network logs بتظهر تقطع في الاتصال\n- الـ Player console بيظهر Error Code: MEDIA_ERR_NETWORK\n- سرعة التحميل أقل من 2 Mbps المطلوبة للـ HD\n- الـ CDN response time أعلى من 500ms\n\n**الحل:**\n1. **افتح إعدادات الفيديو** واختار جودة أقل (480p بدل 1080p)\n2. **امسح الـ Cache والـ Cookies** من المتصفح:\n   - Chrome: Settings > Privacy > Clear browsing data\n   - امسح آخر ساعة أو يوم\n3. **جرب متصفح تاني** (Chrome بدل Firefox)\n4. **اقفل التطبيقات التانية** اللي بتستهلك النت (YouTube, Downloads)\n5. **لو المشكلة مستمرة**: تواصل مع IT Support عشان يفحصوا الـ Firewall والـ Network configuration\n\n**ملحوظة:** لو كل الموظفين عندهم نفس المشكلة، المشكلة في الـ Corporate Network مش جهازك الشخصي.",
+      "metadata": {
+        "source_file": "File_15_Technical_Troubleshooting",
+        "persona": "learner",
+        "intent_type": "troubleshooting",
+        "language": "ar",
+        "escalation_required": "conditional",
+        "chunk_type": "technical_solution",
+        "keywords": "[\"buffering\", \"video\", \"streaming\", \"network\", \"cdn\", \"cache\"]"
+      }
+    },
+    {
+      "chunk_id": "File_15_Tech_Support_01_EN",
+      "title": "Video Continuous Buffering",
+      "content": "**Issue:** Training video keeps stopping and buffering constantly even with fast internet.\n\n**Technical Diagnostic:**\n- Network logs show connection interruptions\n- Player console displays Error Code: MEDIA_ERR_NETWORK\n- Download speed below the required 2 Mbps for HD\n- CDN response time exceeds 500ms\n\n**Solution:**\n1. **Open video settings** and select lower quality (480p instead of 1080p)\n2. **Clear Cache and Cookies** from browser:\n   - Chrome: Settings > Privacy > Clear browsing data\n   - Clear last hour or day\n3. **Try a different browser** (Chrome instead of Firefox)\n4. **Close other applications** consuming bandwidth (YouTube, Downloads)\n5. **If issue persists**: Contact IT Support to check Firewall and Network configuration\n\n**Note:** If all employees face the same issue, the problem is in the Corporate Network not your personal device.",
+      "metadata": {
+        "source_file": "File_15_Technical_Troubleshooting",
+        "persona": "learner",
+        "intent_type": "troubleshooting",
+        "language": "en",
+        "escalation_required": "conditional",
+        "chunk_type": "technical_solution",
+        "keywords": "[\"buffering\", \"video\", \"streaming\", \"network\", \"cdn\", \"cache\"]"
+      }
+    },
+    {
+      "chunk_id": "File_15_Tech_Support_02_AR",
+      "title": "شاشة سوداء عند تشغيل الفيديو",
+      "content": "**المشكلة:** لما بدوس Play على الفيديو، الشاشة بتفضل سوداء والصوت مش شغال برضو.\n\n**التشخيص الفني:**\n- Browser Console بيظهر: DRM_LICENSE_ERROR أو MEDIA_ERR_DECODE\n- الـ Video codec مش supported في المتصفح القديم\n- Hardware acceleration متعطل أو فيه conflict\n- Antivirus أو Firewall بيبلوك الـ DRM requests\n\n**الحل:**\n1. **حدّث المتصفح** لآخر إصدار:\n   - Chrome: Settings > About Chrome\n   - سيب المتصفح يحمّل التحديث وارستارت\n2. **فعّل Hardware Acceleration**:\n   - Chrome: Settings > System > \"Use hardware acceleration when available\"\n3. **عطّل الـ Extensions** المشبوهة:\n   - جرب Incognito Mode: Ctrl+Shift+N\n   - لو الفيديو اشتغل، يبقى في extension بتسبب المشكلة\n4. **امسح الـ Browser Data** بالكامل وارستارت الجهاز\n5. **لو مفيش فايدة**: اتواصل مع Technical Support هيبعتلك رابط فيديو بديل أو يعملك Whitelist للـ domain على الـ Firewall\n\n**ملحوظة:** المشكلة دي غالباً بتحصل في Internet Explorer القديم - استخدم Chrome أو Edge.",
+      "metadata": {
+        "source_file": "File_15_Technical_Troubleshooting",
+        "persona": "learner",
+        "intent_type": "troubleshooting",
+        "language": "ar",
+        "escalation_required": "conditional",
+        "chunk_type": "technical_solution",
+        "keywords": "[\"black screen\", \"video player\", \"drm\", \"codec\", \"hardware acceleration\", \"browser\"]"
+      }
+    },
+    {
+      "chunk_id": "File_15_Tech_Support_02_EN",
+      "title": "Black Screen When Playing Video",
+      "content": "**Issue:** When I press Play on the video, the screen stays black and there's no audio either.\n\n**Technical Diagnostic:**\n- Browser Console shows: DRM_LICENSE_ERROR or MEDIA_ERR_DECODE\n- Video codec not supported in old browser\n- Hardware acceleration disabled or has conflict\n- Antivirus or Firewall blocking DRM requests\n\n**Solution:**\n1. **Update browser** to latest version:\n   - Chrome: Settings > About Chrome\n   - Let browser download update and restart\n2. **Enable Hardware Acceleration**:\n   - Chrome: Settings > System > \"Use hardware acceleration when available\"\n3. **Disable suspicious Extensions**:\n   - Try Incognito Mode: Ctrl+Shift+N\n   - If video works, an extension is causing the issue\n4. **Clear Browser Data** completely and restart device\n5. **If no solution works**: Contact Technical Support who will send you an alternative video link or whitelist the domain on the Firewall\n\n**Note:** This issue commonly occurs in old Internet Explorer - use Chrome or Edge instead.",
+      "metadata": {
+        "source_file": "File_15_Technical_Troubleshooting",
+        "persona": "learner",
+        "intent_type": "troubleshooting",
+        "language": "en",
+        "escalation_required": "conditional",
+        "chunk_type": "technical_solution",
+        "keywords": "[\"black screen\", \"video player\", \"drm\", \"codec\", \"hardware acceleration\", \"browser\"]"
+      }
+    },
+    {
+      "chunk_id": "File_15_Tech_Support_03_AR",
+      "title": "مش قادر أدخل على المنصة - خطأ SSO",
+      "content": "**المشكلة:** لما بدوس Login بيظهر رسالة \"SSO Authentication Failed\" أو \"Error 403: Forbidden\".\n\n**التشخيص الفني:**\n- الـ SSO token expired أو invalid\n- الـ User account مش مفعّل في الـ Identity Provider (Azure AD, Okta)\n- الـ SAML assertion فيها attribute غلط\n- الـ Session cookies اتمسحت أو expired\n\n**الحل:**\n1. **ارستارت الـ Browser** بالكامل (مش tab واحد)\n2. **امسح الـ Cookies الخاصة بـ ZEDNY**:\n   - Chrome: Settings > Privacy > Cookies > See all site data\n   - دور على \"zedny.com\" وامسح الـ cookies\n3. **جرب تدخل من Private/Incognito Window** عشان تتأكد إن المشكلة من الـ cookies\n4. **افحص إنك مسجل دخول على بريد الشركة** (Office 365 or Google Workspace)\n5. **لو المشكلة مستمرة**: لازم تتواصل مع IT Admin عشان يتأكد إن:\n   - حسابك مفعّل على الـ SSO Provider\n   - الـ Email صحيح في النظام\n   - الـ SAML configuration سليمة\n\n**ملحوظة هامة:** المشكلة دي **لازم IT Support** لأنها مش في إيدك - مش هتتحل بمجرد إعادة تشغيل الجهاز.",
+      "metadata": {
+        "source_file": "File_15_Technical_Troubleshooting",
+        "persona": "learner",
+        "intent_type": "troubleshooting",
+        "language": "ar",
+        "escalation_required": "true",
+        "chunk_type": "technical_solution",
+        "keywords": "[\"sso\", \"login\", \"authentication\", \"403\", \"saml\", \"cookies\", \"identity provider\"]"
+      }
+    },
+    {
+      "chunk_id": "File_15_Tech_Support_03_EN",
+      "title": "Cannot Access Platform - SSO Error",
+      "content": "**Issue:** When I click Login, message shows \"SSO Authentication Failed\" or \"Error 403: Forbidden\".\n\n**Technical Diagnostic:**\n- SSO token expired or invalid\n- User account not activated in Identity Provider (Azure AD, Okta)\n- SAML assertion contains wrong attribute\n- Session cookies deleted or expired\n\n**Solution:**\n1. **Restart Browser** completely (not just one tab)\n2. **Clear ZEDNY-specific Cookies**:\n   - Chrome: Settings > Privacy > Cookies > See all site data\n   - Search for \"zedny.com\" and delete cookies\n3. **Try accessing from Private/Incognito Window** to verify if cookies are the issue\n4. **Check that you're logged into company email** (Office 365 or Google Workspace)\n5. **If issue persists**: Must contact IT Admin to verify:\n   - Your account is activated on SSO Provider\n   - Email is correct in the system\n   - SAML configuration is valid\n\n**Important Note:** This issue **requires IT Support** as it's not in your control - won't be fixed by simply restarting your device.",
+      "metadata": {
+        "source_file": "File_15_Technical_Troubleshooting",
+        "persona": "learner",
+        "intent_type": "troubleshooting",
+        "language": "en",
+        "escalation_required": "true",
+        "chunk_type": "technical_solution",
+        "keywords": "[\"sso\", \"login\", \"authentication\", \"403\", \"saml\", \"cookies\", \"identity provider\"]"
+      }
+    },
+    {
+      "chunk_id": "File_15_Tech_Support_05_AR",
+      "title": "نسيت كلمة المرور / استعادة الحساب",
+      "content": "**المشكلة:** المستخدم نسي كلمة المرور الخاصة به ولا يستطيع الدخول للمنصة.\n\n**التشخيص الفني:**\n- محاولات دخول خاطئة تؤدي لـ Account lockout\n- البريد الإلكتروني غير مسجل أو به خطأ إملائي\n- رابط إعادة التعيين لم يصل للبريد\n\n**الحل:**\n1. **استخدم رابط 'نسيت كلمة المرور'**: الموجود في صفحة الدخول.\n2. **افحص البريد الإلكتروني**: تأكد من فحص الـ Spam والـ Junk folder.\n3. **تغيير المتصفح**: أحياناً يكون هناك تعارض يمنع وصول الرابط، جرب متصفحاً آخر.\n4. **تواصل مع المشرف (HR/Admin)**: إذا كنت موظفاً، قد تحتاج لطلب إعادة تعيين من لوحة التحكم الخاصة بشركتك.\n5. **الدعم الفني**: إذا لم تصلك الرسالة خلال 10 دقائق، تواصل معنا وسنقوم بإرسال رابط يدوي.",
+      "metadata": {
+        "source_file": "File_15_Technical_Troubleshooting",
+        "persona": "learner",
+        "intent_type": "troubleshooting",
+        "language": "ar",
+        "escalation_required": "conditional",
+        "chunk_type": "technical_solution",
+        "keywords": [
+          "password",
+          "forgot",
+          "نسيت",
+          "باسورد",
+          "reset",
+          "تعيين"
+        ]
+      }
+    },
+    {
+      "chunk_id": "File_15_Tech_Support_05_EN",
+      "title": "Forgot Password / Account Recovery",
+      "content": "**Issue:** User forgot their password and cannot access the platform.\n\n**Technical Diagnostic:**\n- Multiple failed attempts leading to Account lockout\n- Email not registered or misspelled\n- Reset link not arriving in inbox\n\n**Solution:**\n1. **Use 'Forgot Password' link**: located on the login page.\n2. **Check your Email**: ensure you check Spam and Junk folders.\n3. **Switch Browser**: sometimes conflicts prevent the link from working, try another browser.\n4. **Contact Manager/HR**: if you are an employee, you might need a reset from your company's dashboard.\n5. **Technical Support**: if the email doesn't arrive within 10 minutes, contact us for a manual reset link.",
+      "metadata": {
+        "source_file": "File_15_Technical_Troubleshooting",
+        "persona": "learner",
+        "intent_type": "troubleshooting",
+        "language": "en",
+        "escalation_required": "conditional",
+        "chunk_type": "technical_solution",
+        "keywords": [
+          "password",
+          "forgot",
+          "reset",
+          "account recovery"
+        ]
+      }
+    },
+    {
+      "chunk_id": "File_15_Tech_Support_06_AR",
+      "title": "استعادة الحساب يدوياً (تذاكر الدعم)",
+      "content": "**المشكلة:** جربت استعادة الباسورد بالايميل وموصلش، أو الايميل نفسه مش متاح.\n\n**التشخيص الفني:**\n- الـ Email server بيبلوك رسائل زدني.\n- المستخدم مسجل بايميل قديم أو غلط.\n\n**الحل:**\n1. **افتح تذكرة دعم فني**: اطلب تغيير الايميل أو تفعيل الحساب يدوياً.\n2. **ارفق بياناتك**: (الاسم الكامل، الشركة، الكورسات المسجلة).\n3. **تواصل عبر واتساب**: متاح دعم فني سريع للحسابات المعطلة.\n4. **التحقق من الهوية**: الفريق هيتواصل معاك للتأكد إنك صاحب الحساب.",
+      "metadata": {
+        "source_file": "File_15_Technical_Troubleshooting",
+        "persona": "learner",
+        "intent_type": "troubleshooting",
+        "language": "ar",
+        "escalation_required": "true",
+        "chunk_type": "technical_solution",
+        "keywords": [
+          "manual",
+          "whatsapp",
+          "ticket",
+          "يدوي",
+          "تذكرة"
+        ]
+      }
+    },
+    {
+      "chunk_id": "File_15_Tech_Support_06_EN",
+      "title": "Manual Account Recovery (Support Ticket)",
+      "content": "**Issue:** Reset link not arriving or original email no longer accessible.\n\n**Technical Diagnostic:**\n- Company email server blocking incoming reset links.\n- Incorrect email format in database.\n\n**Solution:**\n1. **Submit a Support Ticket**: Request manual email change or activation.\n2. **Provide Details**: Name, Company, and course Enrollment history.\n3. **WhatsApp Support**: Fast-track recovery via our verified support number.\n4. **Identity Verification**: Our team will verify your identity before granting access.",
+      "metadata": {
+        "source_file": "File_15_Technical_Troubleshooting",
+        "persona": "learner",
+        "intent_type": "troubleshooting",
+        "language": "en",
+        "escalation_required": "true",
+        "chunk_type": "technical_solution",
+        "keywords": [
+          "manual",
+          "recovery",
+          "ticket",
+          "whatsapp"
+        ]
+      }
+    },
+    {
+      "chunk_id": "File_15_Tech_Support_07_AR",
+      "title": "الكورس عالق عند 99% مش بيخلص",
+      "content": "**المشكلة:** خلصت كل الدروس والكويزات بس الـ Progress bar فضلت واقفة عند 99% والكورس مش بيتعلّم مكتمل.\n\n**التشخيص الفني:**\n- في lesson أو quiz completion event مش متسجل صح في الـ database\n- الـ SCORM package بيبعت incomplete status\n- الـ Final quiz score مش متخطي الـ passing threshold\n- في activity اتفتح بس مكملش لآخر slide\n\n**الحل:**\n1. **روح على \"My Courses\" صفحة الكورسات**\n2. **افتح كل Lesson تاني** من الأول للآخر وتأكد ظهرت علامة ✓ الخضرا\n3. **افحص الـ Quizzes**: \n   - تأكد إنك جبت على الأقل 70% في كل quiz\n   - لو في quiz failed ارجع حله تاني\n4. **شوف آخر slide في كل lesson**:\n   - بعض الـ modules بتحتاج تدوس \"Mark as Complete\" في آخر صفحة\n5. **امسح الـ Cache** وارفرش الصفحة (Ctrl+F5)\n6. **لو لسه واقف عند 99%**: اتواصل مع Technical Support هيعمل manual override للـ completion status من الـ backend\n\n**ملحوظة:** لو الكورس فيه Survey في الآخر، لازم تملاها عشان يتحسب مكتمل 100%.",
+      "metadata": {
+        "source_file": "File_15_Technical_Troubleshooting",
+        "persona": "learner",
+        "intent_type": "troubleshooting",
+        "language": "ar",
+        "escalation_required": "conditional",
+        "chunk_type": "technical_solution",
+        "keywords": "[\"progress\", \"99%\", \"completion\", \"stuck\", \"scorm\", \"quiz\", \"survey\"]"
+      }
+    },
+    {
+      "chunk_id": "File_15_Tech_Support_04_EN",
+      "title": "Course Stuck at 99% Won't Complete",
+      "content": "**Issue:** Finished all lessons and quizzes but Progress bar stays at 99% and course doesn't mark as complete.\n\n**Technical Diagnostic:**\n- A lesson or quiz completion event not properly recorded in database\n- SCORM package sending incomplete status\n- Final quiz score not exceeding passing threshold\n- An activity was opened but not completed to last slide\n\n**Solution:**\n1. **Go to \"My Courses\" page**\n2. **Open each Lesson again** from start to end and verify green ✓ appears\n3. **Check Quizzes**: \n   - Ensure you scored at least 70% in each quiz\n   - If any quiz failed, retake it\n4. **View last slide in each lesson**:\n   - Some modules require clicking \"Mark as Complete\" on last page\n5. **Clear Cache** and refresh page (Ctrl+F5)\n6. **If still stuck at 99%**: Contact Technical Support to perform manual override of completion status from backend\n\n**Note:** If course has a Survey at the end, you must complete it for 100% completion.",
+      "metadata": {
+        "source_file": "File_15_Technical_Troubleshooting",
+        "persona": "learner",
+        "intent_type": "troubleshooting",
+        "language": "en",
+        "escalation_required": "conditional",
+        "chunk_type": "technical_solution",
+        "keywords": "[\"progress\", \"99%\", \"completion\", \"stuck\", \"scorm\", \"quiz\", \"survey\"]"
+      }
+    },
+    {
+      "chunk_id": "File_15_Tech_Support_05_AR",
+      "title": "الكويز مش بيتسجل أو بيظهر Error 500",
+      "content": "**المشكلة:** بحل الكويز وبدوس Submit بس بيظهر \"Error 500: Internal Server Error\" والإجابات مش بتتسجل.\n\n**التشخيص الفني:**\n- الـ Server timeout بسبب quiz complexity أو كبر حجم البيانات\n- الـ Database connection فصلت أثناء الـ submission\n- في validation error في الـ backend (missing required field)\n- الـ Session expired قبل ما تخلص الكويز\n\n**الحل:**\n1. **متحاولش تعمل Submit تاني بسرعة** - ممكن تسجل الإجابات مكررة\n2. **اعمل Screenshot للإجابات** قبل ما تحاول تاني\n3. **ارفرش الصفحة** (F5) وشوف لو الإجابات اتسجلت\n4. **لو مش متسجلة**: ارجع ادخل على الكويز تاني وحله من أول وجديد\n5. **جرب في وقت تاني**: لو الـ server مشغول (مثلاً آخر يوم في deadline) ممكن يحصل timeout\n6. **لو المشكلة متكررة باستمرار**: **لازم تبلّغ Technical Support فوراً** عشان يفحصوا:\n   - الـ Server logs والـ database errors\n   - الـ Quiz configuration ممكن فيها مشكلة\n   - Session timeout settings\n\n**إجراء طارئ:** لو الـ deadline قرّب، ابعت screenshot للإجابات لـ L&D Team كإثبات إنك حليت الكويز.",
+      "metadata": {
+        "source_file": "File_15_Technical_Troubleshooting",
+        "persona": "learner",
+        "intent_type": "troubleshooting",
+        "language": "ar",
+        "escalation_required": "true",
+        "chunk_type": "technical_solution",
+        "keywords": "[\"quiz\", \"submit\", \"error 500\", \"server error\", \"timeout\", \"database\", \"session\"]"
+      }
+    },
+    {
+      "chunk_id": "File_15_Tech_Support_05_EN",
+      "title": "Quiz Not Saving or Shows Error 500",
+      "content": "**Issue:** Complete quiz and click Submit but shows \"Error 500: Internal Server Error\" and answers don't save.\n\n**Technical Diagnostic:**\n- Server timeout due to quiz complexity or large data size\n- Database connection dropped during submission\n- Validation error in backend (missing required field)\n- Session expired before completing quiz\n\n**Solution:**\n1. **Don't try to Submit again quickly** - might save duplicate answers\n2. **Take Screenshot of answers** before retrying\n3. **Refresh page** (F5) and check if answers were saved\n4. **If not saved**: Re-enter quiz and complete it from scratch\n5. **Try at different time**: If server is busy (e.g., last day of deadline) timeout may occur\n6. **If problem persists repeatedly**: **Must notify Technical Support immediately** to check:\n   - Server logs and database errors\n   - Quiz configuration may have an issue\n   - Session timeout settings\n\n**Emergency procedure:** If deadline is approaching, send screenshot of answers to L&D Team as proof you completed the quiz.",
+      "metadata": {
+        "source_file": "File_15_Technical_Troubleshooting",
+        "persona": "learner",
+        "intent_type": "troubleshooting",
+        "language": "en",
+        "escalation_required": "true",
+        "chunk_type": "technical_solution",
+        "keywords": "[\"quiz\", \"submit\", \"error 500\", \"server error\", \"timeout\", \"database\", \"session\"]"
+      }
+    },
+    {
+      "chunk_id": "File_15_Tech_Support_06_AR",
+      "title": "اسمي غلط على الشهادة",
+      "content": "**المشكلة:** خلصت الكورس بس الشهادة طالع فيها اسمي غلط أو مكتوب بالإنجليزي مش بالعربي.\n\n**التشخيص الفني:**\n- الـ User profile في الـ database فيه spelling mistake\n- الـ SSO sync جاب اسم مختصر من الـ Active Directory\n- الـ Certificate template بياخد full name من حقل غلط\n- في Arabic/English language mismatch في الـ profile settings\n\n**الحل:**\n1. **روح على Profile Settings** (أيقونة الصورة الشخصية في أعلى اليمين)\n2. **اعدل الاسم** في الخانات التالية:\n   - Full Name (Arabic)\n   - Full Name (English)\n   - Display Name\n3. **احفظ التعديلات** ودوس Save\n4. **ارجع للكورس** ودوس \"Re-generate Certificate\" لو الخيار موجود\n5. **لو مفيش خيار Re-generate**: **اتواصل مع L&D Team أو Technical Support** عشان:\n   - يعدلوا الاسم في الـ backend\n   - يعملوا issue certificate جديدة بالاسم الصحيح\n   - يحذفوا الشهادة القديمة\n\n**ملحوظة هامة:** تعديل الاسم في الـ Profile **لا يعدّل الشهادات القديمة تلقائياً** - لازم تطلب إصدار جديد.\n\n**Escalation مطلوب:** دايماً لازم تتواصل مع الدعم الفني عشان الشهادات الرسمية.",
+      "metadata": {
+        "source_file": "File_15_Technical_Troubleshooting",
+        "persona": "learner",
+        "intent_type": "troubleshooting",
+        "language": "ar",
+        "escalation_required": "true",
+        "chunk_type": "technical_solution",
+        "keywords": "[\"certificate\", \"name\", \"misspelled\", \"profile\", \"regenerate\", \"arabic\", \"english\"]"
+      }
+    },
+    {
+      "chunk_id": "File_15_Tech_Support_06_EN",
+      "title": "My Name is Wrong on Certificate",
+      "content": "**Issue:** Completed course but certificate shows my name incorrectly or in English instead of Arabic.\n\n**Technical Diagnostic:**\n- User profile in database has spelling mistake\n- SSO sync pulled abbreviated name from Active Directory\n- Certificate template pulling full name from wrong field\n- Arabic/English language mismatch in profile settings\n\n**Solution:**\n1. **Go to Profile Settings** (profile picture icon top right)\n2. **Edit name** in following fields:\n   - Full Name (Arabic)\n   - Full Name (English)\n   - Display Name\n3. **Save changes** and click Save\n4. **Return to course** and click \"Re-generate Certificate\" if option exists\n5. **If no Re-generate option**: **Contact L&D Team or Technical Support** to:\n   - Edit name in backend\n   - Issue new certificate with correct name\n   - Delete old certificate\n\n**Important Note:** Editing name in Profile **does not automatically update old certificates** - must request new issuance.\n\n**Escalation Required:** Always contact technical support for official certificates.",
+      "metadata": {
+        "source_file": "File_15_Technical_Troubleshooting",
+        "persona": "learner",
+        "intent_type": "troubleshooting",
+        "language": "en",
+        "escalation_required": "true",
+        "chunk_type": "technical_solution",
+        "keywords": "[\"certificate\", \"name\", \"misspelled\", \"profile\", \"regenerate\", \"arabic\", \"english\"]"
+      }
+    },
+    {
+      "chunk_id": "File_15_Tech_Support_07_AR",
+      "title": "الـ QR Code على الشهادة مش شغال",
+      "content": "**المشكلة:** لما بعمل scan للـ QR code اللي على الشهادة، مش بيفتح أي حاجة أو بيقول \"Invalid Certificate\".\n\n**التشخيص الفني:**\n- الـ Certificate verification URL expired أو اتغير\n- الـ QR code generator عمل encode غلط للـ data\n- الـ Certificate ID مش موجود في الـ verification database\n- الـ SSL certificate للـ verification page expired\n\n**الحل:**\n1. **جرب تعمل scan تاني** باستخدام تطبيق QR مختلف (Google Lens, iPhone Camera)\n2. **اسأل حد تاني يعمل scan** عشان تتأكد إن المشكلة مش من جهازك\n3. **افتح الشهادة PDF** وشوف لو في verification link مكتوب تحت الـ QR code، جرب تفتحه\n4. **لو الـ link مش شغال**: **لازم تبلّغ Technical Support فوراً** عشان:\n   - يفحصوا الـ Certificate database\n   - يعملوا re-generate للشهادة بـ QR code جديد\n   - يتأكدوا إن الـ verification service شغال\n\n**Workaround مؤقت:** ممكن تطلب من L&D Team verification letter رسمية كبديل للـ QR code.\n\n**Escalation ضروري:** المشكلة دي **لازم Technical Support** لأنها مرتبطة بالـ backend verification system.",
+      "metadata": {
+        "source_file": "File_15_Technical_Troubleshooting",
+        "persona": "learner",
+        "intent_type": "troubleshooting",
+        "language": "ar",
+        "escalation_required": "true",
+        "chunk_type": "technical_solution",
+        "keywords": "[\"qr code\", \"certificate\", \"verification\", \"invalid\", \"scan\", \"expired\"]"
+      }
+    },
+    {
+      "chunk_id": "File_15_Tech_Support_07_EN",
+      "title": "QR Code on Certificate Not Working",
+      "content": "**Issue:** When scanning the QR code on certificate, nothing opens or says \"Invalid Certificate\".\n\n**Technical Diagnostic:**\n- Certificate verification URL expired or changed\n- QR code generator incorrectly encoded data\n- Certificate ID not found in verification database\n- SSL certificate for verification page expired\n\n**Solution:**\n1. **Try scanning again** using different QR app (Google Lens, iPhone Camera)\n2. **Ask someone else to scan** to verify issue isn't from your device\n3. **Open certificate PDF** and check if verification link is written below QR code, try opening it\n4. **If link doesn't work**: **Must notify Technical Support immediately** to:\n   - Check Certificate database\n   - Re-generate certificate with new QR code\n   - Verify that verification service is running\n\n**Temporary Workaround:** Can request official verification letter from L&D Team as alternative to QR code.\n\n**Escalation Required:** This issue **requires Technical Support** as it's linked to backend verification system.",
+      "metadata": {
+        "source_file": "File_15_Technical_Troubleshooting",
+        "persona": "learner",
+        "intent_type": "troubleshooting",
+        "language": "en",
+        "escalation_required": "true",
+        "chunk_type": "technical_solution",
+        "keywords": "[\"qr code\", \"certificate\", \"verification\", \"invalid\", \"scan\", \"expired\"]"
+      }
+    },
+    {
+      "chunk_id": "File_15_Tech_Support_08_AR",
+      "title": "مش قادر أنزّل الشهادة - Download Failed",
+      "content": "**المشكلة:** بدوس على \"Download Certificate\" بس الملف مش بينزّل أو بيطلع error \"Download Failed\" أو \"Network Error\".\n\n**التشخيص الفني:**\n- الـ Browser بيبلوك الـ automatic downloads (popup blocker)\n- الـ PDF generation service timeout أو down\n- الـ File size كبير والـ network قطع أثناء التحميل\n- Antivirus أو Firewall بيبلوك الـ download\n\n**الحل:**\n1. **شوف الـ popup blocker** في المتصفح:\n   - Chrome: في الـ address bar ممكن يكون في أيقونة 🚫 دوس عليها واعمل \"Always allow popups from zedny.com\"\n2. **جرب Right-click** على زر Download واختار \"Save link as...\"\n3. **امسح الـ Downloads folder** لو في ملفات كتير (ممكن تكون سببت conflict)\n4. **عطّل الـ Antivirus مؤقتاً** وجرب تنزّل (بس ارجع فعّله بعدها)\n5. **جرب متصفح تاني** أو Private Window\n6. **لو لسه مش شغال**: **اتواصل مع Technical Support** هيبعتلك الشهادة على الإيميل مباشرة\n\n**Tip:** لو النت عندك ضعيف، استنى شوية بعد ما تدوس Download - الشهادة بتاخد وقت في التحميل (خصوصاً لو عليها صور كتير).",
+      "metadata": {
+        "source_file": "File_15_Technical_Troubleshooting",
+        "persona": "learner",
+        "intent_type": "troubleshooting",
+        "language": "ar",
+        "escalation_required": "conditional",
+        "chunk_type": "technical_solution",
+        "keywords": "[\"certificate\", \"download\", \"failed\", \"popup blocker\", \"network\", \"pdf\"]"
+      }
+    },
+    {
+      "chunk_id": "File_15_Tech_Support_08_EN",
+      "title": "Cannot Download Certificate - Download Failed",
+      "content": "**Issue:** Click on \"Download Certificate\" but file doesn't download or shows error \"Download Failed\" or \"Network Error\".\n\n**Technical Diagnostic:**\n- Browser blocking automatic downloads (popup blocker)\n- PDF generation service timeout or down\n- File size large and network disconnected during download\n- Antivirus or Firewall blocking download\n\n**Solution:**\n1. **Check popup blocker** in browser:\n   - Chrome: In address bar there may be 🚫 icon, click it and \"Always allow popups from zedny.com\"\n2. **Try Right-click** on Download button and select \"Save link as...\"\n3. **Clear Downloads folder** if many files exist (may have caused conflict)\n4. **Disable Antivirus temporarily** and try downloading (but re-enable it after)\n5. **Try different browser** or Private Window\n6. **If still not working**: **Contact Technical Support** who will email certificate directly\n\n**Tip:** If your internet is weak, wait a bit after clicking Download - certificate takes time to download (especially if it has many images).",
+      "metadata": {
+        "source_file": "File_15_Technical_Troubleshooting",
+        "persona": "learner",
+        "intent_type": "troubleshooting",
+        "language": "en",
+        "escalation_required": "conditional",
+        "chunk_type": "technical_solution",
+        "keywords": "[\"certificate\", \"download\", \"failed\", \"popup blocker\", \"network\", \"pdf\"]"
+      }
+    },
+    {
+      "chunk_id": "File_15_Tech_Support_09_AR",
+      "title": "الـ HR Dashboard - التقارير مش بتتصدّر Excel",
+      "content": "**المشكلة:** بدوس \"Export to Excel\" في الـ Admin Dashboard بس الملف مش بينزّل أو بيطلع فاضي.\n\n**التشخيص الفني:**\n- الـ Export query timeout بسبب كمية data كبيرة (أكثر من 10,000 rows)\n- الـ Excel generation library بتواجه memory limit\n- في filters أو date ranges غلط مسببة empty result\n- User permissions مش شاملة الـ export privilege\n\n**الحل:**\n1. **صغّر الـ date range**:\n   - بدل \"Last Year\" اختار \"Last Month\" أو \"Last Quarter\"\n   - كسّم التقرير لفترات أصغر ونزّلهم على دفعات\n2. **امسح الـ Filters اللي مش محتاجها**:\n   - كل ما الـ filters أقل، الـ export أسرع\n3. **استخدم \"Quick Export\" بدل \"Detailed Report\"** لو موجود\n4. **جرب في وقت تاني**: لو الـ server مشغول (مثلاً 9 صباحاً) استنى ساعة أو ساعتين\n5. **افحص الـ User permissions**:\n   - تأكد إن الـ role بتاعك فيها \"Data Export\" permission\n6. **لو المشكلة مستمرة**: **اتواصل مع System Admin** عشان:\n   - يزود الـ export timeout limit\n   - يشوف الـ server logs\n   - يعملك manual export من الـ database\n\n**للـ Admins:** لو محتاج تقرير كبير (أكثر من 50,000 سطر)، اطلب من IT Team يعملك scheduled export يبعتهولك email.",
+      "metadata": {
+        "source_file": "File_15_Technical_Troubleshooting",
+        "persona": "admin",
+        "intent_type": "troubleshooting",
+        "language": "ar",
+        "escalation_required": "conditional",
+        "chunk_type": "technical_solution",
+        "keywords": "[\"dashboard\", \"export\", \"excel\", \"reports\", \"timeout\", \"permissions\", \"admin\"]"
+      }
+    },
+    {
+      "chunk_id": "File_15_Tech_Support_09_EN",
+      "title": "HR Dashboard - Reports Not Exporting to Excel",
+      "content": "**Issue:** Click \"Export to Excel\" in Admin Dashboard but file doesn't download or comes out empty.\n\n**Technical Diagnostic:**\n- Export query timeout due to large data volume (more than 10,000 rows)\n- Excel generation library facing memory limit\n- Wrong filters or date ranges causing empty result\n- User permissions not including export privilege\n\n**Solution:**\n1. **Reduce date range**:\n   - Instead of \"Last Year\" select \"Last Month\" or \"Last Quarter\"\n   - Break report into smaller periods and download in batches\n2. **Remove unnecessary Filters**:\n   - Fewer filters = faster export\n3. **Use \"Quick Export\" instead of \"Detailed Report\"** if available\n4. **Try at different time**: If server is busy (e.g., 9 AM) wait an hour or two\n5. **Check User permissions**:\n   - Verify your role has \"Data Export\" permission\n6. **If issue persists**: **Contact System Admin** to:\n   - Increase export timeout limit\n   - Check server logs\n   - Perform manual export from database\n\n**For Admins:** If you need large report (more than 50,000 rows), ask IT Team to create scheduled export that emails you the file.",
+      "metadata": {
+        "source_file": "File_15_Technical_Troubleshooting",
+        "persona": "admin",
+        "intent_type": "troubleshooting",
+        "language": "en",
+        "escalation_required": "conditional",
+        "chunk_type": "technical_solution",
+        "keywords": "[\"dashboard\", \"export\", \"excel\", \"reports\", \"timeout\", \"permissions\", \"admin\"]"
+      }
+    },
+    {
+      "chunk_id": "File_15_Tech_Support_10_AR",
+      "title": "بيانات الموظف مش ظاهرة في الـ Dashboard",
+      "content": "**المشكلة:** موظف جديد اتضاف للنظام بس بياناته مش ظاهرة في الـ Admin Dashboard أو الـ Reports.\n\n**التشخيص الفني:**\n- الـ User sync من الـ HR system لسه مجاش\n- الـ Employee record موجود بس الـ dashboard cache مش متحدث\n- الـ User status = \"Inactive\" أو \"Pending\"\n- في data mismatch بين الـ LMS والـ HR database (Employee ID مختلف)\n\n**الحل:**\n1. **استنى 15-30 دقيقة**: الـ sync ممكن يكون بياخد وقت\n2. **اعمل Refresh للـ Dashboard** (دوس على زر Refresh أو F5)\n3. **افحص الـ User Status**:\n   - روح على \"User Management\"\n   - دور على الموظف بالاسم أو الإيميل\n   - شوف لو الـ Status = \"Active\"\n4. **فعّل الموظف** لو لقيته \"Inactive\":\n   - دوس Edit\n   - غيّر Status لـ \"Active\"\n   - احفظ التعديلات\n5. **افحص الـ Employee ID**: تأكد إنه نفس الـ ID الموجود في الـ HR system\n6. **لو البيانات لسه مش ظاهرة**: **اتواصل مع System Admin أو IT Support** عشان:\n   - يعملوا force sync من الـ HR database\n   - يفحصوا الـ API integration logs\n   - يتأكدوا إن الـ user permissions صحيحة\n\n**ملحوظة للـ HR:** لو عندك موظفين كتير اتضافوا مرة واحدة، ممكن الـ sync ياخد ساعة أو أكتر.",
+      "metadata": {
+        "source_file": "File_15_Technical_Troubleshooting",
+        "persona": "admin",
+        "intent_type": "troubleshooting",
+        "language": "ar",
+        "escalation_required": "conditional",
+        "chunk_type": "technical_solution",
+        "keywords": "[\"dashboard\", \"employee data\", \"missing\", \"sync\", \"user management\", \"hr system\", \"inactive\"]"
+      }
+    },
+    {
+      "chunk_id": "File_15_Tech_Support_10_EN",
+      "title": "Employee Data Not Showing in Dashboard",
+      "content": "**Issue:** New employee added to system but their data not showing in Admin Dashboard or Reports.\n\n**Technical Diagnostic:**\n- User sync from HR system hasn't occurred yet\n- Employee record exists but dashboard cache not updated\n- User status = \"Inactive\" or \"Pending\"\n- Data mismatch between LMS and HR database (different Employee ID)\n\n**Solution:**\n1. **Wait 15-30 minutes**: Sync may be taking time\n2. **Refresh Dashboard** (click Refresh button or F5)\n3. **Check User Status**:\n   - Go to \"User Management\"\n   - Search for employee by name or email\n   - Check if Status = \"Active\"\n4. **Activate employee** if found as \"Inactive\":\n   - Click Edit\n   - Change Status to \"Active\"\n   - Save changes\n5. **Check Employee ID**: Verify it matches ID in HR system\n6. **If data still not showing**: **Contact System Admin or IT Support** to:\n   - Force sync from HR database\n   - Check API integration logs\n   - Verify user permissions are correct\n\n**Note for HR:** If many employees added at once, sync may take an hour or more.",
+      "metadata": {
+        "source_file": "File_15_Technical_Troubleshooting",
+        "persona": "admin",
+        "intent_type": "troubleshooting",
+        "language": "en",
+        "escalation_required": "conditional",
+        "chunk_type": "technical_solution",
+        "keywords": "[\"dashboard\", \"employee data\", \"missing\", \"sync\", \"user management\", \"hr system\", \"inactive\"]"
+      }
+    }
+  ]
+}

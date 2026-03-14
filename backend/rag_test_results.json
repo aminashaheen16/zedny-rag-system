@@ -1,0 +1,666 @@
+{
+  "timestamp": "2026-01-25T02:10:47.911900",
+  "summary": {
+    "total_questions": 40,
+    "total_passed": 21,
+    "total_failed": 19,
+    "success_rate": 52.5,
+    "by_category": {
+      "INFO": {
+        "passed": 10,
+        "failed": 5,
+        "scores": [
+          0.75,
+          1.0,
+          0.0,
+          0.16666666666666666,
+          0.4,
+          0.75,
+          0.6,
+          0.5,
+          0.25,
+          0.25,
+          0.5,
+          0.75,
+          0.5,
+          0.5,
+          0.6666666666666666
+        ]
+      },
+      "SALES": {
+        "passed": 8,
+        "failed": 7,
+        "scores": [
+          0.0,
+          0.6,
+          0.2,
+          0.75,
+          0.4,
+          0.0,
+          1.0,
+          0.75,
+          0.0,
+          0.6666666666666666,
+          0.5,
+          0.4,
+          0.25,
+          0.5,
+          0.75
+        ]
+      },
+      "ISSUE": {
+        "passed": 3,
+        "failed": 7,
+        "scores": [
+          0.0,
+          0.8,
+          0.2,
+          0.0,
+          0.0,
+          0.0,
+          0.25,
+          0.2,
+          0.6666666666666666,
+          1.0
+        ]
+      }
+    }
+  },
+  "detailed_results": [
+    {
+      "question": "ما هي منصة زدني؟",
+      "category": "INFO",
+      "status": "PASS",
+      "score": 0.75,
+      "found_keywords": [
+        "منصة",
+        "تعليم",
+        "تدريب"
+      ],
+      "missing_keywords": [
+        "Zedny"
+      ],
+      "answer_preview": "أهلاً بك في رحاب زدني، \nمنصة زدني هي منصة تدريب مؤسسي متكاملة في مصر والشرق الأوسط، متخصصة في تصميم وتنفيذ برامج تدريب مخصصة للشركات، من خلال:\n- **منصة e-learning احترافية**: منصة تدريب رقمية متقدمة\n-..."
+    },
+    {
+      "question": "ما هو مفهوم Edutainment؟",
+      "category": "INFO",
+      "status": "PASS",
+      "score": 1.0,
+      "found_keywords": [
+        "تعليم",
+        "ترفيه",
+        "edutainment"
+      ],
+      "missing_keywords": [],
+      "answer_preview": "أهلاً بك في رحاب زدني، \nالتعليم الترفيهي (Edutainment) هو **دمج التعلم مع التفاعل والمتعة** باستخدام أدوات مثل:\n* **Motion & Animated Videos**: فيديوهات متحركة وجرافيك احترافي\n* **قصص وسيناريوهات واقع..."
+    },
+    {
+      "question": "ما هي مميزات منصة زدني؟",
+      "category": "INFO",
+      "status": "FAIL",
+      "score": 0.0,
+      "found_keywords": [],
+      "missing_keywords": [
+        "ميز",
+        "منصة",
+        "تدريب"
+      ],
+      "answer_preview": "**السؤال:** أقل مدة اشتراك؟\n\n**الإجابة:**\n\nحسب نوع البرنامج، وغالباً:\n- ✅ **برامج قصيرة**: يمكن الاشتراك لمدة البرنامج فقط\n- ✅ **اشتراك ربع سنوي**: 3 أشهر (الأكثر شيوعاً للشركات الصغيرة)\n- ✅ **اشتراك ..."
+    },
+    {
+      "question": "من هم عملاء زدني؟",
+      "category": "INFO",
+      "status": "FAIL",
+      "score": 0.16666666666666666,
+      "found_keywords": [
+        "شركة"
+      ],
+      "missing_keywords": [
+        "vodafone",
+        "بنك",
+        "عميل",
+        "Bank",
+        "Misr"
+      ],
+      "answer_preview": "**السؤال:** ليه أختار ZEDNY مش شركة تدريب تانية؟\n\n**الإجابة:**\n\nZEDNY بتركز على **النتيجة مش عدد الساعات**.\n\n**نتميز بـ:**\n\n1. **محتوى مُصمم حسب احتياج كل شركة**\n   - برامج تدريب مخصصة بالكامل\n   - تص..."
+    },
+    {
+      "question": "ما هي الشراكات التي لديكم؟",
+      "category": "INFO",
+      "status": "FAIL",
+      "score": 0.4,
+      "found_keywords": [
+        "vodafone",
+        "Bank"
+      ],
+      "missing_keywords": [
+        "شراك",
+        "بنك",
+        "Partners"
+      ],
+      "answer_preview": "**السؤال:** اشتغلتوا مع مين قبل كده؟\n\n**الإجابة:**\n\n**أشارت الشركات التالية إلى إستفادتهم من خدمات زدني:**\n\n| **الشركة** | **القطاع** |\n| --- | --- |\n| Vodafone Egypt | قطاع الاتصالات |\n| Banque Misr ..."
+    },
+    {
+      "question": "هل تقدمون محتوى عربي؟",
+      "category": "INFO",
+      "status": "PASS",
+      "score": 0.75,
+      "found_keywords": [
+        "عربي",
+        "محتوى",
+        "نعم"
+      ],
+      "missing_keywords": [
+        "Arabic"
+      ],
+      "answer_preview": "**أهلاً بك في رحاب زدني**\n\nللحصول على تفاصيل دقيقة حول هذا الجزء، يسعدنا تواصلك مع فريقنا المختص.\n\n**السؤال: هل تقدمون محتوى عربي؟**\n\n**الإجابة:**\n\nنعم، زدني تقدم محتوى تدريبي عربي احترافي، مصمم خصيصً..."
+    },
+    {
+      "question": "ما الفرق بينكم وبين المنصات التانية؟",
+      "category": "INFO",
+      "status": "PASS",
+      "score": 0.6,
+      "found_keywords": [
+        "زدني",
+        "تخصص",
+        "مؤسس"
+      ],
+      "missing_keywords": [
+        "عربي",
+        "ROI"
+      ],
+      "answer_preview": "**أهلاً بك في رحاب زدني**\n\n**السؤال:** اشتغلتوا مع مين قبل كده؟\n\n**الإجابة:**\n\nاشتغلنا مع **جهات كبرى في قطاعات مختلفة** بنسبة رضا تتجاوز **95%**.\n\n**أمثلة من عملائنا:**\n\n**1. قطاع الاتصالات:**\n- ✅ **..."
+    },
+    {
+      "question": "ما هي أنواع البرامج التدريبية؟",
+      "category": "INFO",
+      "status": "PASS",
+      "score": 0.5,
+      "found_keywords": [
+        "تدريب",
+        "مهارات"
+      ],
+      "missing_keywords": [
+        "برنامج",
+        "Programs"
+      ],
+      "answer_preview": "**أهلاً بك في رحاب زدني**\n\n**السؤال:** اشتغلتوا مع مين قبل كده؟\n\n**الإجابة:**\n\n**أشارتك إلى جهات كبرى في قطاعات مختلفة** بنسبة رضا تتجاوز **95%**.\n\n**أمثلة من عملائنا:**\n\n**1. قطاع الاتصالات:**\n- ✅ **..."
+    },
+    {
+      "question": "هل لديكم تطبيق موبايل؟",
+      "category": "INFO",
+      "status": "FAIL",
+      "score": 0.25,
+      "found_keywords": [
+        "تطبيق"
+      ],
+      "missing_keywords": [
+        "موبايل",
+        "app",
+        "Mobile"
+      ],
+      "answer_preview": "**السؤال:** ليه أختار ZEDNY مش شركة تدريب تانية؟\n\n**الإجابة:**\n\nZEDNY بتركز على **النتيجة مش عدد الساعات**.\n\n**نتميز بـ:**\n\n1. **تكنولوجيا متقدمة**: استخدام أحدث التكنولوجيا في مجال التدريب\n   - **منص..."
+    },
+    {
+      "question": "كيف يمكنني التواصل معكم؟",
+      "category": "INFO",
+      "status": "FAIL",
+      "score": 0.25,
+      "found_keywords": [
+        "اتصال"
+      ],
+      "missing_keywords": [
+        "تواصل",
+        "email",
+        "Contact"
+      ],
+      "answer_preview": "**أهلاً بك في رحاب زدني**\n\n**ردًا على سؤالك حول تعليم الترفيهي (Edutainment):**\n\nالتعليم الترفيهي هو دمج التعلم مع التفاعل والمتعة باستخدام:\n\n**الأدوات:**\n- **Motion & Animated Videos**: فيديوهات متحر..."
+    },
+    {
+      "question": "هل تقديمون شهادات معتمدة؟",
+      "category": "INFO",
+      "status": "PASS",
+      "score": 0.5,
+      "found_keywords": [
+        "شهاد",
+        "معتمد"
+      ],
+      "missing_keywords": [
+        "certificate",
+        "Accredited"
+      ],
+      "answer_preview": "**أهلاً بك في رحاب زدني**\n\n**حسناً لما سألت عن شهادات معتمدة، ف زدني تقدم شهادات تدريب متميزة ومعتمدة.**\n\n**🎓 شهادات إتمام التدريب:**\n\nنعم، زدني تقدم **شهادات إتمام البرنامج التدريبي** الرسمية لكل متد..."
+    },
+    {
+      "question": "ما هو Assessment Hub؟",
+      "category": "INFO",
+      "status": "PASS",
+      "score": 0.75,
+      "found_keywords": [
+        "assessment",
+        "قياس",
+        "Hub"
+      ],
+      "missing_keywords": [
+        "تقييم"
+      ],
+      "answer_preview": "**أهلاً بك في رحاب زدني**\n\n**الإجابة:**\n\n**تركيزي منصب على مساعدتك في تحقيق أقصى استفادة من حلول زدني المتخصصة في المحتوى العربي للمؤسسات، والتي تختلف جوهرياً عن المنصات العامة.**\n\n**فروق زدني:**\n\n* *..."
+    },
+    {
+      "question": "ما هي نسبة رضا العملاء؟",
+      "category": "INFO",
+      "status": "PASS",
+      "score": 0.5,
+      "found_keywords": [
+        "رضا",
+        "95"
+      ],
+      "missing_keywords": [
+        "عميل",
+        "Satisfaction"
+      ],
+      "answer_preview": "**أهلاً بك في رحاب زدني**\n\n**السؤال:** اشتغلتوا مع مين قبل كده؟\n\n**الإجابة:**\n\nنعم، أشتغلنا مع **جهات كبرى في قطاعات مختلفة** بنسبة رضا تتجاوز **95%**.\n\n**أمثلة من عملائنا:**\n\n**1. قطاع الاتصالات:**\n-..."
+    },
+    {
+      "question": "هل يوجد محتوى للقيادة والإدارة؟",
+      "category": "INFO",
+      "status": "PASS",
+      "score": 0.5,
+      "found_keywords": [
+        "قياد",
+        "إدار"
+      ],
+      "missing_keywords": [
+        "leadership",
+        "Management"
+      ],
+      "answer_preview": "**السؤال:** هل يوجد محتوى للقيادة والإدارة؟\n\n**الإجابة:**\n\nنعم، يوجد محتوى متكامل للقيادة والإدارة في ZEDNY، بما في ذلك:\n\n* **برامج تدريب مخصصة** لتقديم مهارات القيادة والادارة\n* **محتوى تعليمي** متكا..."
+    },
+    {
+      "question": "ما هو نظام التخصيص عندكم؟",
+      "category": "INFO",
+      "status": "PASS",
+      "score": 0.6666666666666666,
+      "found_keywords": [
+        "تخصيص",
+        "مخصص"
+      ],
+      "missing_keywords": [
+        "custom"
+      ],
+      "answer_preview": "**أهلاً بك في رحاب زدني**\n\n**السؤال:** ما هو نظام التخصيص عندكم؟\n\n**الإجابة:**\n\nنظام التخصيص عندنا **مخصص ومتكامل**، يسمح لك بتحديد احتياجاتك التدريبية واختيار البرامج التي تناسبك. يمكنك **تخصيص البرا..."
+    },
+    {
+      "question": "عايز أشترك في المنصة",
+      "category": "SALES",
+      "status": "FAIL",
+      "score": 0.0,
+      "found_keywords": [],
+      "missing_keywords": [
+        "اشتراك",
+        "تواصل",
+        "فريق",
+        "Subscribe"
+      ],
+      "answer_preview": "**أهلاً بك في رحاب زدني**\n\n**حسناً، لماذا تختار ZEDNY؟**\n\n**تركيزي منصب على مساعدتك في تحقيق أقصى استفادة من حلول زدني المتخصصة في المحتوى العربي للمؤسسات، والتي تختلف جوهرياً عن المنصات العامة.**\n\n**..."
+    },
+    {
+      "question": "كم سعر الاشتراك؟",
+      "category": "SALES",
+      "status": "PASS",
+      "score": 0.6,
+      "found_keywords": [
+        "سعر",
+        "تكلفة",
+        "اشتراك"
+      ],
+      "missing_keywords": [
+        "Price",
+        "Cost"
+      ],
+      "answer_preview": "**السؤال:** كم سعر الاشتراك؟\n\n**الإجابة:**\n\nسعر الاشتراك في ZEDNY يختلف حسب احتياجات كل شركة، ويمكننا تقديم عروض خاصة للمؤسسات الكبيرة والمتوسطة والصغيرة.\n\n**نتميز بـ:**\n\n* **عروض مخصصة**: نعمل معك لت..."
+    },
+    {
+      "question": "هل فيه خصومات للشركات؟",
+      "category": "SALES",
+      "status": "FAIL",
+      "score": 0.2,
+      "found_keywords": [
+        "شرك"
+      ],
+      "missing_keywords": [
+        "خصم",
+        "عرض",
+        "Discount",
+        "Corporate"
+      ],
+      "answer_preview": "**أهلاً بك في رحاب زدني**\n\n**حسناً، سوف نستكشف معك إمكانياتنا في التدريب المؤسسي للشركات والجهات.**\n\n**هل أنت تبحث عن:**\n\n**🏢 حلول تدريب للشركة/المؤسسة**\n**👤 تدريب شخصي/فردي**\n**❓ مجرد استكشاف**\n\n**خت..."
+    },
+    {
+      "question": "أنا من شركة وعايز أدرب الموظفين",
+      "category": "SALES",
+      "status": "PASS",
+      "score": 0.75,
+      "found_keywords": [
+        "شركة",
+        "تدريب",
+        "موظف"
+      ],
+      "missing_keywords": [
+        "Training"
+      ],
+      "answer_preview": "**Question:** أنا من شركة وعايز أدرب الموظفين\n\n**Answer:**\n\nأهلاً بك في رحاب زدني. نستخدم نهجًا متكاملًا لتدريب الموظفين، يركز على تحسين الأداء والتحسين المستمر. يمكننا مساعدتك في تصميم وتطوير برامج ت..."
+    },
+    {
+      "question": "ما هي باقات الاشتراك المتاحة؟",
+      "category": "SALES",
+      "status": "FAIL",
+      "score": 0.4,
+      "found_keywords": [
+        "باقة",
+        "اشتراك"
+      ],
+      "missing_keywords": [
+        "سعر",
+        "Packages",
+        "Plans"
+      ],
+      "answer_preview": "**السؤال:** ما هي باقات الاشتراك المتاحة؟\n\n**الإجابة:**\n\nلقد قمت بتقديم تفاصيل حول ما يميز ZEDNY فيما سبق، وبالتالي، باقات الاشتراك المتاحة هي:\n\n* **باقة أساسية**: تتيح لك الوصول إلى محتوى تدريبي شامل..."
+    },
+    {
+      "question": "هل يوجد اشتراك سنوي؟",
+      "category": "SALES",
+      "status": "FAIL",
+      "score": 0.0,
+      "found_keywords": [],
+      "missing_keywords": [
+        "سنوي",
+        "اشتراك",
+        "خصم",
+        "Annual",
+        "Yearly"
+      ],
+      "answer_preview": "**السؤال:** اشتغلتوا مع مين قبل كده؟\n\n**الإجابة:**\n\n**أشارت الشركة إلى جهات كبرى في قطاعات مختلفة** بنسبة رضا تتجاوز **95%**.\n\n**أمثلة من عملائنا:**\n\n| **الشركة** | **القطاع** | **برامج تدريب** |\n| --..."
+    },
+    {
+      "question": "كيف أحجز ديمو أو عرض توضيحي؟",
+      "category": "SALES",
+      "status": "PASS",
+      "score": 1.0,
+      "found_keywords": [
+        "ديمو",
+        "demo",
+        "عرض",
+        "حجز"
+      ],
+      "missing_keywords": [],
+      "answer_preview": "**السؤال:** كيف أحجز ديمو أو عرض توضيحي؟\n\n**الإجابة:**\n\nيمكنك حجز ديمو أو عرض توضيحي عن برامج ZEDNY بسهولة:\n\n**📞 احجز Discovery Call:**\n\n- يمكنك التواصل مع فريقنا التجاري لتحديد موعد مناسب\n- سنقدم لك ..."
+    },
+    {
+      "question": "ما هو أقل عدد موظفين للاشتراك؟",
+      "category": "SALES",
+      "status": "PASS",
+      "score": 0.75,
+      "found_keywords": [
+        "عدد",
+        "موظف",
+        "اشتراك"
+      ],
+      "missing_keywords": [
+        "Employees"
+      ],
+      "answer_preview": "**السؤال:** أقل عدد موظفين للاشتراك؟\n\n**الإجابة:**\n\n**لا يوجد حد أدنى لعدد الموظفين للاشتراك في برامج زدني.** يمكننا العمل مع أي عدد من الموظفين، سواء كانوا 5 أو 500.\n\n**مرونة في الاشتراك:**\n\n- يمكننا..."
+    },
+    {
+      "question": "هل تقديمون حلول Enterprise؟",
+      "category": "SALES",
+      "status": "FAIL",
+      "score": 0.0,
+      "found_keywords": [],
+      "missing_keywords": [
+        "enterprise",
+        "مؤسس",
+        "حلول"
+      ],
+      "answer_preview": "**السؤال:** ليه أختار ZEDNY مش شركة تدريب تانية؟\n\n**الإجابة:**\n\nZEDNY بتركز على **النتيجة مش عدد الساعات**.\n\n**نتميز بـ:**\n\n1. **تقييم دقيق للمهارات قبل وبعد التدريب**\n   - استخدام تقنيات تقييم متطورة..."
+    },
+    {
+      "question": "ما هي طرق الدفع المتاحة؟",
+      "category": "SALES",
+      "status": "PASS",
+      "score": 0.6666666666666666,
+      "found_keywords": [
+        "دفع",
+        "payment"
+      ],
+      "missing_keywords": [
+        "طريقة"
+      ],
+      "answer_preview": "**السؤال:** ما هي طرق الدفع المتاحة؟\n\n**الإجابة:**\n\n**📈 طرق الدفع المتاحة:**\n\n- **بطاقة الائتمان** (Credit Card)\n- **فيزا** (Visa)\n- **ماستركارد** (Mastercard)\n- **PayPal** (PayPal)\n- **سداد إلكتروني*..."
+    },
+    {
+      "question": "هل فيه فترة تجريبية مجانية؟",
+      "category": "SALES",
+      "status": "PASS",
+      "score": 0.5,
+      "found_keywords": [
+        "تجريب",
+        "مجان"
+      ],
+      "missing_keywords": [
+        "trial",
+        "Free"
+      ],
+      "answer_preview": "**السؤال:** هل فيه فترة تجريبية مجانية؟\n\n**الإجابة:**\n\nنعم، لدينا فترة تجريبية مجانية لتعرف على مميزات زدني. يمكنك التواصل معنا لتحديد موعد للتواصل مع فريقنا لتحديد تفاصيل الفترة التجريبية.\n\n**نتميز ب..."
+    },
+    {
+      "question": "أريد عرض سعر لـ 100 موظف",
+      "category": "SALES",
+      "status": "FAIL",
+      "score": 0.4,
+      "found_keywords": [
+        "سعر",
+        "موظف"
+      ],
+      "missing_keywords": [
+        "عرض",
+        "Offer",
+        "Quote"
+      ],
+      "answer_preview": "**أهلاً بك في رحاب زدني**\n\nللحصول على سعر 100 موظف، يرجى التواصل مع فريقنا المختص لتحديد تفاصيل المطلوب. يمكننا تقديم عروض خاصة للمؤسسات الكبيرة.\n\n**نظام Session Tagging الشامل:**\n\nيُستخدم نظام Sessio..."
+    },
+    {
+      "question": "ما هو العائد على الاستثمار ROI؟",
+      "category": "SALES",
+      "status": "FAIL",
+      "score": 0.25,
+      "found_keywords": [
+        "roi"
+      ],
+      "missing_keywords": [
+        "عائد",
+        "استثمار",
+        "Return"
+      ],
+      "answer_preview": "**🎯 ROI Calculation:**\n\n**Example:**\n- **Investment**: 100,000 EGP in training\n- **Productivity increase**: 30%\n- **Annual value of improvement**: 400,000 EGP\n- **ROI**: **4:1** in the first year\n\n**C..."
+    },
+    {
+      "question": "هل يوجد خصم للعقود طويلة المدى؟",
+      "category": "SALES",
+      "status": "PASS",
+      "score": 0.5,
+      "found_keywords": [
+        "خصم",
+        "طويل"
+      ],
+      "missing_keywords": [
+        "عقد",
+        "Long-term"
+      ],
+      "answer_preview": "**السؤال:** هل يوجد خصم للعقود طويلة المدى؟\n\n**الإجابة:**\n\nنعم، يوجد خصم للعقود طويلة المدى. يمكنك الحصول على خصم أكبر مع الاشتراك لمدة طويلة، حيث يمكننا تقديم **خصومات تصل إلى 30%** على الاشتراك السن..."
+    },
+    {
+      "question": "كيف يمكنني التحدث مع مسؤول المبيعات؟",
+      "category": "SALES",
+      "status": "PASS",
+      "score": 0.75,
+      "found_keywords": [
+        "مبيعات",
+        "تواصل",
+        "تحدث"
+      ],
+      "missing_keywords": [
+        "representative"
+      ],
+      "answer_preview": "**أهلاً بك في رحاب زدني**\n\n**السؤال:** كيف يمكنني التحدث مع مسؤول المبيعات؟\n\n**الإجابة:**\n\nيمكنك التواصل مع مسؤول المبيعات من خلال:\n\n* **التواصل الإلكتروني:** يمكنك إرسال رسالة إلكترونية إلى [sales@ze..."
+    },
+    {
+      "question": "الفيديو مش شغال عندي",
+      "category": "ISSUE",
+      "status": "FAIL",
+      "score": 0.0,
+      "found_keywords": [],
+      "missing_keywords": [
+        "فيديو",
+        "حل",
+        "جرب",
+        "Video",
+        "Working"
+      ],
+      "answer_preview": "أعتذر جداً، يبدو أن هناك ضغطاً تقنياً غير عادي حالياً. يرجى المحاولة بعد قليل أو التواصل مع الدعم الفني مباشرة. 🚀"
+    },
+    {
+      "question": "نسيت كلمة السر",
+      "category": "ISSUE",
+      "status": "PASS",
+      "score": 0.8,
+      "found_keywords": [
+        "كلمة",
+        "سر",
+        "reset",
+        "password"
+      ],
+      "missing_keywords": [
+        "استعادة"
+      ],
+      "answer_preview": "أهلاً بك في رحاب زدني\n\n**Question:** نسيت كلمة السر\n\n**Answer:**\n\nحسناً. يمكنك إعادة تعيين كلمة السر من خلال الضغط على \"نسيت كلمة السر\" في صفحة تسجيل الدخول. سيتم إرسال رابط لإعادة تعيين كلمة السر إلى..."
+    },
+    {
+      "question": "الموقع بطيء جداً",
+      "category": "ISSUE",
+      "status": "FAIL",
+      "score": 0.2,
+      "found_keywords": [
+        "بطيء"
+      ],
+      "missing_keywords": [
+        "سرعة",
+        "cache",
+        "انترنت",
+        "Slow"
+      ],
+      "answer_preview": "أهلاً بك في رحاب زدني. \n\n**الموقع بطيء جداً**. هذا مشكلة شائعة، ويمكننا حلها بسهولة. \n\n**خطوات الحل:**\n\n1. **تحديث متصفحك**: تأكد من أنك تستخدم أحدث إصدار من متصفحك. يمكنك زيارة موقع متصفحك الرسمي وتح..."
+    },
+    {
+      "question": "مش قادر أسجل دخول",
+      "category": "ISSUE",
+      "status": "FAIL",
+      "score": 0.0,
+      "found_keywords": [],
+      "missing_keywords": [
+        "تسجيل",
+        "دخول",
+        "login"
+      ],
+      "answer_preview": "أعتذر جداً، يبدو أن هناك ضغطاً تقنياً غير عادي حالياً. يرجى المحاولة بعد قليل أو التواصل مع الدعم الفني مباشرة. 🚀"
+    },
+    {
+      "question": "الصوت مش شغال في الفيديوهات",
+      "category": "ISSUE",
+      "status": "FAIL",
+      "score": 0.0,
+      "found_keywords": [],
+      "missing_keywords": [
+        "صوت",
+        "فيديو",
+        "جرب",
+        "Sound",
+        "Audio"
+      ],
+      "answer_preview": "أعتذر جداً، يبدو أن هناك ضغطاً تقنياً غير عادي حالياً. يرجى المحاولة بعد قليل أو التواصل مع الدعم الفني مباشرة. 🚀"
+    },
+    {
+      "question": "الشهادة مش ظاهرة",
+      "category": "ISSUE",
+      "status": "FAIL",
+      "score": 0.0,
+      "found_keywords": [],
+      "missing_keywords": [
+        "شهاد",
+        "ظهور",
+        "إتمام",
+        "Certificate"
+      ],
+      "answer_preview": "أعتذر جداً، يبدو أن هناك ضغطاً تقنياً غير عادي حالياً. يرجى المحاولة بعد قليل أو التواصل مع الدعم الفني مباشرة. 🚀"
+    },
+    {
+      "question": "الكورس مش بيفتح",
+      "category": "ISSUE",
+      "status": "FAIL",
+      "score": 0.25,
+      "found_keywords": [
+        "Course"
+      ],
+      "missing_keywords": [
+        "كورس",
+        "فتح",
+        "جرب"
+      ],
+      "answer_preview": "أهلاً بك في رحاب زدني\n\nTo address your issue, I'll follow the diagnostic flow. Since you've mentioned that the course isn't opening, I'll start by asking a clarifying question to narrow down the issue..."
+    },
+    {
+      "question": "الدفع فشل",
+      "category": "ISSUE",
+      "status": "FAIL",
+      "score": 0.2,
+      "found_keywords": [
+        "Payment"
+      ],
+      "missing_keywords": [
+        "دفع",
+        "فشل",
+        "بطاقة",
+        "Failed"
+      ],
+      "answer_preview": "**أهلاً بك في رحاب زدني**\n\nGiven your question about payment methods, I'll provide you with a detailed explanation of the available options.\n\nZEDNY offers a range of payment methods to cater to differ..."
+    },
+    {
+      "question": "التطبيق بيقفل فجأة",
+      "category": "ISSUE",
+      "status": "PASS",
+      "score": 0.6666666666666666,
+      "found_keywords": [
+        "تطبيق",
+        "تحديث"
+      ],
+      "missing_keywords": [
+        "crash"
+      ],
+      "answer_preview": "أهلاً بك في رحاب زدني.\n\n**التطبيق بيقفل فجأة**. هذا مشكلة شائعة يمكن أن تحدث لعدة أسباب. إليك بعض الخطوات التي يمكنك اتباعها لتحديد السبب:\n\n1. **تحقق من الاتصال بالإنترنت**: تأكد من أنك متصل بالإنترنت..."
+    },
+    {
+      "question": "مشكلة في تتبع التقدم",
+      "category": "ISSUE",
+      "status": "PASS",
+      "score": 1.0,
+      "found_keywords": [
+        "تقدم",
+        "progress",
+        "تتبع"
+      ],
+      "missing_keywords": [],
+      "answer_preview": "**Question:** What is the main issue you're facing with tracking progress?\n\n**Answer:**\n\nTo better understand the issue, can you please tell me more about what you mean by \"مشكلة في تتبع التقدم\"? Are ..."
+    }
+  ]
+}

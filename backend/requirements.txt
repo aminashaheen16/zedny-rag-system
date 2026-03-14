@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+pydantic
+supabase
+openai
+google-genai
+cohere
+python-dotenv
+httpx
+python-multipart
+jinja2
+bcrypt
+pyjwt
+python-dateutil

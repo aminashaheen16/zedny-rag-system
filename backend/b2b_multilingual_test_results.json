@@ -1,0 +1,202 @@
+{
+  "timestamp": "2026-02-01T13:29:09.687239",
+  "test_type": "B2B Multilingual Comprehensive",
+  "languages_tested": [
+    "Arabic MSA",
+    "Egyptian Colloquial",
+    "English",
+    "Code-Switching"
+  ],
+  "results": [
+    {
+      "name": "Language Coverage",
+      "passed": 15,
+      "total": 21
+    },
+    {
+      "name": "Egyptian Dialect",
+      "passed": 5,
+      "total": 5
+    }
+  ],
+  "scenarios": {
+    "ARABIC_MSA": {
+      "name": "🇪🇬 Arabic (Modern Standard)",
+      "tests": [
+        {
+          "id": "MSA-B2B-001",
+          "input": "أواجه صعوبة في تسجيل الدخول عبر نظام التوثيق الموحد الخاص بالشركة",
+          "expected_category": "ENTERPRISE",
+          "expected_solution": "sso_001",
+          "description": "SSO login issue - Formal Arabic"
+        },
+        {
+          "id": "MSA-B2B-002",
+          "input": "نظام SCORM لا يتتبع تقدم الموظفين بشكل صحيح",
+          "expected_category": "ENTERPRISE",
+          "expected_solution": "scorm_001",
+          "description": "SCORM tracking - Formal Arabic"
+        },
+        {
+          "id": "MSA-B2B-003",
+          "input": "جدار الحماية الخاص بالشركة يمنع الوصول إلى المنصة",
+          "expected_category": "ENTERPRISE",
+          "expected_solution": "firewall_001",
+          "description": "Corporate firewall - Formal Arabic"
+        },
+        {
+          "id": "MSA-B2B-004",
+          "input": "الفيديو التدريبي لا يعمل على الشبكة الداخلية للمؤسسة",
+          "expected_category": "VIDEO",
+          "context": "Corporate network context",
+          "description": "Video on corporate network - Formal Arabic"
+        }
+      ]
+    },
+    "EGYPTIAN_COLLOQUIAL": {
+      "name": "🗣️ Egyptian Colloquial",
+      "tests": [
+        {
+          "id": "EGY-B2B-001",
+          "input": "مش قادر أدخل بإيميل الشركة، بيطلع error",
+          "expected_category": "LOGIN",
+          "dialect": "Egyptian",
+          "description": "Corporate email login - Colloquial"
+        },
+        {
+          "id": "EGY-B2B-002",
+          "input": "الـ SSO بتاع الشركة مش شغال، مش بيدخلني",
+          "expected_category": "ENTERPRISE",
+          "expected_solution": "sso_001",
+          "dialect": "Egyptian",
+          "description": "SSO not working - Colloquial"
+        },
+        {
+          "id": "EGY-B2B-003",
+          "input": "الفيديوهات التدريبية بطيئة جداً في الأوفيس، النت كويس",
+          "expected_category": "VIDEO",
+          "dialect": "Egyptian",
+          "description": "Slow videos in office - Colloquial"
+        },
+        {
+          "id": "EGY-B2B-004",
+          "input": "مدير الموارد البشرية عايز يشوف تقرير تقدم الموظفين",
+          "is_b2b_query": true,
+          "expected_behavior": "Should understand HR manager context",
+          "dialect": "Egyptian",
+          "description": "HR reporting request - Colloquial"
+        },
+        {
+          "id": "EGY-B2B-005",
+          "input": "الشهادات مش بتطلع للموظفين بعد ما يخلصوا الكورس",
+          "expected_category": "CERTIFICATE",
+          "dialect": "Egyptian",
+          "description": "Employee certificates - Colloquial"
+        }
+      ]
+    },
+    "ENGLISH_FORMAL": {
+      "name": "🇬🇧 English (Formal Business)",
+      "tests": [
+        {
+          "id": "ENG-B2B-001",
+          "input": "Our employees cannot access the platform through corporate SSO",
+          "expected_category": "ENTERPRISE",
+          "expected_solution": "sso_001",
+          "description": "SSO access - Formal English"
+        },
+        {
+          "id": "ENG-B2B-002",
+          "input": "SCORM completion tracking stuck at 99% for multiple users",
+          "expected_category": "ENTERPRISE",
+          "expected_solution": "scorm_001",
+          "description": "SCORM issue - Formal English"
+        },
+        {
+          "id": "ENG-B2B-003",
+          "input": "Corporate firewall blocking zedny.ai domain",
+          "expected_category": "ENTERPRISE",
+          "expected_solution": "firewall_001",
+          "description": "Firewall blocking - Formal English"
+        },
+        {
+          "id": "ENG-B2B-004",
+          "input": "Need bulk certificate generation for 500 employees",
+          "is_b2b_query": true,
+          "expected_behavior": "B2B-specific request",
+          "description": "Bulk certificates - Formal English"
+        },
+        {
+          "id": "ENG-B2B-005",
+          "input": "Integration with our LMS is not syncing user progress",
+          "expected_category": "ENTERPRISE",
+          "is_b2b_query": true,
+          "description": "LMS integration - Formal English"
+        }
+      ]
+    },
+    "CODE_SWITCHING": {
+      "name": "🔀 Code-Switching (Mixed Arabic-English)",
+      "tests": [
+        {
+          "id": "MIX-B2B-001",
+          "input": "الـ SSO مش شغال والـ IT department بيقولوا المشكلة من عندكم",
+          "expected_category": "ENTERPRISE",
+          "dialect": "Mixed Egyptian-English",
+          "description": "SSO with IT reference - Code-switching"
+        },
+        {
+          "id": "MIX-B2B-002",
+          "input": "عندنا issue في الـ SCORM tracking، واقف على 99%",
+          "expected_category": "ENTERPRISE",
+          "expected_solution": "scorm_001",
+          "dialect": "Mixed Egyptian-English",
+          "description": "SCORM issue - Code-switching"
+        },
+        {
+          "id": "MIX-B2B-003",
+          "input": "الـ HR manager عايز progress report للـ employees",
+          "is_b2b_query": true,
+          "dialect": "Mixed Egyptian-English",
+          "description": "HR reporting - Code-switching"
+        }
+      ]
+    },
+    "B2B_EDGE_CASES": {
+      "name": "⚠️ B2B Edge Cases",
+      "tests": [
+        {
+          "id": "EDGE-B2B-001",
+          "input": "500 موظف محتاجين certificates في نفس الوقت، النظام بيهنج",
+          "is_b2b_query": true,
+          "complexity": "HIGH",
+          "description": "Bulk operation performance"
+        },
+        {
+          "id": "EDGE-B2B-002",
+          "input": "عايزين integration مع SAP SuccessFactors",
+          "is_b2b_query": true,
+          "expected_behavior": "Should escalate to enterprise team",
+          "description": "Third-party integration request"
+        },
+        {
+          "id": "EDGE-B2B-003",
+          "input": "المدير المالي عايز ROI report للتدريب",
+          "is_b2b_query": true,
+          "expected_behavior": "B2B analytics request",
+          "description": "ROI reporting - CFO request"
+        },
+        {
+          "id": "EDGE-B2B-004",
+          "input": "الشركة عندها فروع في 5 دول، محتاجين different time zones support",
+          "is_b2b_query": true,
+          "complexity": "HIGH",
+          "description": "Multi-region enterprise setup"
+        }
+      ]
+    }
+  },
+  "total_passed": 20,
+  "total_tests": 26,
+  "pass_rate": 76.92307692307693
+}
